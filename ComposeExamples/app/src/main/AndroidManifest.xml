@@ -2,13 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.emreusta.composeproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/uyg_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/uyg_icon_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ComposeProject">
+        android:theme="@style/Theme.ComposeProject"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ComposeWidgets"
+            android:exported="true"
+            android:label="@string/title_activity_compose_widgets"
+            android:theme="@style/Theme.ComposeProject">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".YemekTarifi"
             android:exported="true"
@@ -29,18 +43,11 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ComposeProject" />
-
         <activity
             android:name=".AppPageStructure"
             android:exported="true"
             android:label="@string/title_activity_app_page_structure"
-            android:theme="@style/Theme.ComposeProject" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.ComposeProject"></activity>
     </application>
 
 </manifest>
