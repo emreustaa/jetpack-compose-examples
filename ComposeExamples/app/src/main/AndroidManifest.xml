@@ -4,38 +4,37 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/uyg_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/uyg_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeProject">
+        <activity
+            android:name=".YemekTarifi"
+            android:exported="true"
+            android:label="@string/title_activity_yemek_tarifi"
+            android:theme="@style/Theme.ComposeProject" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.ComposeProject">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.ComposeProject" />
         <activity
             android:name=".IlhamVer"
             android:exported="true"
             android:label="@string/title_activity_ilham_ver"
-            android:theme="@style/Theme.ComposeProject">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.ComposeProject" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ComposeProject">
+            android:theme="@style/Theme.ComposeProject" />
+
+        <activity
+            android:name=".AppPageStructure"
+            android:exported="true"
+            android:label="@string/title_activity_app_page_structure"
+            android:theme="@style/Theme.ComposeProject" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

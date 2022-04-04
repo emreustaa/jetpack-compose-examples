@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="anaRenk">#607D8B</color>
     <color name="anaRenkKoyu">#485E68</color>
+    <color name="anaRenkYemek">#FF9801</color>
+    <color name="anaRenkKoyuYemek">#BF7100</color>
+    <color name="alternatifRenkYemek">#FF6E40</color>
 </resources>

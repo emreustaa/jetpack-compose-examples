@@ -2,6 +2,6 @@
 <resources>
 
     <style name="Theme.ComposeProject" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/anaRenkKoyu</item>
+        <item name="android:statusBarColor">@color/anaRenkKoyuYemek</item>
     </style>
 </resources>

@@ -1,9 +1,7 @@
 package com.emreusta.composeproject
 
 import android.os.Bundle
-import android.text.Editable
 import android.util.Log
-import android.widget.EditText
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -19,7 +17,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextLayoutInput
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.emreusta.composeproject.ui.theme.ComposeProjectTheme

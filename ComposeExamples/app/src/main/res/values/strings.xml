@@ -4,4 +4,6 @@
     <string name="buttonYazi">Next</string>
     <string name="title_activity_ilham_ver">IlhamVer</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_yemek_tarifi">YemekTarifi</string>
+    <string name="title_activity_app_page_structure">AppPageStructure</string>
 </resources>
