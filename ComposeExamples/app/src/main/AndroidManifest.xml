@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeProject">
         <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.ComposeProject">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".IlhamVer"
             android:exported="true"
             android:label="@string/title_activity_ilham_ver"
