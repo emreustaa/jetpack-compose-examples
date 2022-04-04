@@ -1,6 +1,7 @@
 package com.emreusta.composeproject
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import android.webkit.WebViewClient
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -22,7 +24,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -44,7 +49,7 @@ class ComposeWidgets : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    SayfaWebView()
+                    SayfaDropDown()
                 }
             }
         }
@@ -55,7 +60,84 @@ class ComposeWidgets : ComponentActivity() {
 @Composable
 fun DefaultPreview6() {
     ComposeProjectTheme {
-        SayfaWebView()
+        SayfaDropDown()
+    }
+}
+
+
+@Composable
+fun SayfaDropDown() {
+
+    val menuAcilisKontrol = remember {
+        mutableStateOf(false)
+    }
+
+    val secilenIndex = remember {
+        mutableStateOf(0)
+    }
+
+    val ulkeList = listOf("Türkiye", "İtalya", "Almanya", "Rusya", "Çin")
+
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.SpaceEvenly,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Box {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .size(100.dp, 50.dp)
+                    .clickable {
+                        menuAcilisKontrol.value = true
+                    }
+            ) {
+                Text(text = ulkeList[secilenIndex.value])
+                Image(
+                    painter = painterResource(id = R.drawable.ic_drop_down),
+                    contentDescription = ""
+                )
+            }
+            DropdownMenu(
+                expanded = menuAcilisKontrol.value,
+                onDismissRequest = { menuAcilisKontrol.value = false }) {
+
+                ulkeList.forEachIndexed { index, ulke ->
+                    DropdownMenuItem(onClick = {
+                        Log.e("Menu", "$ulke seçildi")
+                        menuAcilisKontrol.value = false
+                        secilenIndex.value = index
+                    }) {
+                        Text(text = ulke)
+                    }
+                }
+            }
+        }
+        Button(onClick = {
+            Log.e("Menu","En son seçilen ülke : ${ulkeList[secilenIndex.value]}")
+        }) {
+            Text(text = "Göster")
+        }
+    }
+}
+
+@Composable
+fun SayfaImage() {
+    Column {
+        val activity = (LocalContext.current as Activity)
+
+        Image(
+            bitmap = ImageBitmap.imageResource(
+                id = activity.resources.getIdentifier(
+                    "gslogo",
+                    "drawable",
+                    activity.packageName
+                )
+            ),
+            contentDescription = ""
+        )
+        Image(painter = painterResource(id = R.drawable.ic_anchor), contentDescription = "")
     }
 }
 
